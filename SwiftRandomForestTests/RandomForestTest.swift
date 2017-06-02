@@ -29,18 +29,17 @@ class RandomForestTest: XCTestCase {
     
     static func createDataset() -> Matrix<Int> {
         let mat = Matrix<Int>.init(rows: 200, columns: 4)
-        for i in 0..<100 {
-            for j in 0..<4 {
-                mat[i,j]=0
-                mat[i+100,j]=1
+        for i in 0..<200 {
+            for _ in 0..<4 {
+                mat.append( ((i<100) ? 0 : 1) )
             }
         }
         return mat
     }
     
+    
+    
     func test() {
-        
-        
         let dataset = MatrixReference<Int>.init(matrix: mat)
         dataset.fill(200)
         

@@ -25,6 +25,7 @@
 		A608CB991E7C4F7800FBE1FE /* MatrixTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB981E7C4F7800FBE1FE /* MatrixTest.swift */; };
 		A608CB9B1E7C528800FBE1FE /* MatrixReferenceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB9A1E7C528800FBE1FE /* MatrixReferenceTest.swift */; };
 		A608CB9E1E7C59B000FBE1FE /* RandomForestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB9D1E7C59B000FBE1FE /* RandomForestTest.swift */; };
+		A64A703A1EE1A9C200169A73 /* RandomForestPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A70391EE1A9C200169A73 /* RandomForestPerformanceTest.swift */; };
 		A66D1EA31E71AAC7006E94B1 /* MatrixReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D1EA21E71AAC7006E94B1 /* MatrixReference.swift */; };
 		A66D1EA51E72D32D006E94B1 /* MatrixBenchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D1EA41E72D32D006E94B1 /* MatrixBenchmarks.swift */; };
 		A67D3C291E6DA988007B2E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D3C281E6DA988007B2E65 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		A608CB981E7C4F7800FBE1FE /* MatrixTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixTest.swift; sourceTree = "<group>"; };
 		A608CB9A1E7C528800FBE1FE /* MatrixReferenceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixReferenceTest.swift; sourceTree = "<group>"; };
 		A608CB9D1E7C59B000FBE1FE /* RandomForestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomForestTest.swift; sourceTree = "<group>"; };
+		A64A70391EE1A9C200169A73 /* RandomForestPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomForestPerformanceTest.swift; sourceTree = "<group>"; };
 		A66D1EA21E71AAC7006E94B1 /* MatrixReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixReference.swift; sourceTree = "<group>"; };
 		A66D1EA41E72D32D006E94B1 /* MatrixBenchmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixBenchmarks.swift; sourceTree = "<group>"; };
 		A67D3C251E6DA988007B2E65 /* SwiftRandomForest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRandomForest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				A608CB9D1E7C59B000FBE1FE /* RandomForestTest.swift */,
+				A64A70391EE1A9C200169A73 /* RandomForestPerformanceTest.swift */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
@@ -204,7 +207,6 @@
 				A67D3C311E6DA988007B2E65 /* LaunchScreen.storyboard */,
 				A67D3C341E6DA988007B2E65 /* Info.plist */,
 			);
-			name = SwiftRandomForest;
 			path = SwiftRandomForest;
 			sourceTree = "<group>";
 		};
@@ -358,6 +360,7 @@
 				A608CB9E1E7C59B000FBE1FE /* RandomForestTest.swift in Sources */,
 				A608CB891E7C49B600FBE1FE /* Matrix.swift in Sources */,
 				A608CB8C1E7C49BC00FBE1FE /* Numerics.swift in Sources */,
+				A64A703A1EE1A9C200169A73 /* RandomForestPerformanceTest.swift in Sources */,
 				A608CB8A1E7C49B900FBE1FE /* TreeNode.swift in Sources */,
 				A608CB871E7C49B100FBE1FE /* RandomForest.swift in Sources */,
 				A608CB9B1E7C528800FBE1FE /* MatrixReferenceTest.swift in Sources */,
