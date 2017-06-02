@@ -77,7 +77,7 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
     public private(set) var trees:ThreadSafeArray<TreeNode<T>> = ThreadSafeArray<TreeNode<T>>.init()
     
     private private(set) var outputClasses:[T]
-    private let pendingOperations = PendingOperations(queueName: "treeQueue", concurrentOperations: 4)
+    private let pendingOperations = PendingOperations(queueName: "treeQueue", concurrentOperations: 1)
     
     init(maxDepth:Int = 10, minSize:Int = 50, sampleSize:Double = 0.1, treesCount:Int = 10, seed:String = "Seed", splitType:FeatureSplitType = .Sqrt, balancedTrees:Bool = false, weighs:Array<Int> = [], outputClasses:[T]) {
         
@@ -115,6 +115,7 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
                 let index = self.randomSource.nextInt(upperBound:dataset.count)
                 sample.append(index: index)
             }
+            sample.updateOutputs()
             return sample
             
         } else {
@@ -340,6 +341,9 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
                 right.append(index: dataset.rows[i])
             }
         }
+        
+        left.updateOutputs()
+        right.updateOutputs()
         
         return Group.init(left: left, right: right)
     }

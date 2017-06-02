@@ -58,6 +58,7 @@ class CrossValidation<T:Numeric, U:ClassifierAlgorithm>: NSObject where U.Numeri
             for fold:MatrixReference<T> in allData {
                 safeTrainSet.append(otherMatrix: fold)
             }
+            safeTrainSet.updateOutputs()
             
             self.algorithm.runClassifier(trainDataset: safeTrainSet, testDataset: testSet, completion: { (predicted:Array<T>) in
                 let actual = folds[foldIndex].outputs
@@ -122,6 +123,7 @@ class CrossValidation<T:Numeric, U:ClassifierAlgorithm>: NSObject where U.Numeri
         var datasetSplit:Array<MatrixReference<T>> = []
         let datasetCopy:MatrixReference<T> = MatrixReference<T>.init(matrix: dataset)
         datasetCopy.fill(dataset.rows)
+        datasetCopy.updateOutputs()
         let foldSize = Int(dataset.rows/folds)
         for _ in 0..<folds {
             let fold:MatrixReference<T> = MatrixReference<T>.init(matrixReference: datasetCopy, count: foldSize)
@@ -129,6 +131,8 @@ class CrossValidation<T:Numeric, U:ClassifierAlgorithm>: NSObject where U.Numeri
                 let index = Int(arc4random_uniform(UInt32(datasetCopy.count)))
                 fold.append(index:datasetCopy.remove(index))
             }
+            datasetCopy.updateOutputs()
+            fold.updateOutputs()
             datasetSplit.append(fold)
         }
         return datasetSplit

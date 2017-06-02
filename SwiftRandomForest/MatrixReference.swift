@@ -29,17 +29,20 @@ class MatrixReference<T:Numeric> {
     public private(set) var count:Int = 0
     public private(set) var maxCount:Int = 0
     public private(set) var columns:Int = 0
+    public private(set) var outputs: Array<T> = []
     
     init (matrix:Matrix<T>) {
         self.matrix = matrix
         self.maxCount = matrix.rows
         self.columns = matrix.columns
+        self.updateOutputs()
     }
     
     init (matrixReference:MatrixReference<T>, count:Int) {
         self.matrix = matrixReference.matrix
         self.maxCount = count
         self.columns = matrixReference.columns
+        self.updateOutputs()
     }
     
     public func elementAt(_ row:Int, _ column:Int) -> T {
@@ -50,6 +53,15 @@ class MatrixReference<T:Numeric> {
     public func rowAtIndex(_ index: Int) -> ArraySlice<T> {
         let realIndex = self.rows[index]
         return self.matrix.rowAtIndex(realIndex)
+    }
+    
+    public func updateOutputs() {
+        var outputsArray:Array<T> = []
+        for i in 0..<self.count {
+            let row = self.rows[i]
+            outputsArray.append(self.matrix[row,self.columns - 1])
+        }
+        self.outputs = outputsArray
     }
     
     public func remove(_ index:Int) -> Int {
@@ -106,13 +118,3 @@ struct MatrixReferenceIterator<T:Numeric> : IteratorProtocol {
     }
 }
 
-extension MatrixReference {
-    var outputs: Array<T> {
-        var outputsArray:Array<T> = []
-        for i in 0..<self.count {
-            let row = self.rows[i]
-            outputsArray.append(self.matrix[row,self.columns - 1])
-        }
-        return outputsArray
-    }
-}
