@@ -20,23 +20,21 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
 
-    var matrix:Matrix<Double>?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let rd = CSVReader<Double>.init(encoding: .utf8, hasHeader: true)
-        self.matrix = rd.parseFileWith(name:"database")
-        
-        let rf = RandomForest<Double>.init(maxDepth:30, minSize:10, sampleSize:0.5, balancedTrees:true, weighs:[1,1], outputClasses: self.matrix!.outputClasses!)
-        
-        let cv = CrossValidation<Double,RandomForest<Double>>.init(algorithm: rf, folds: 5)
-        cv.evaluateAlgorithm(dataset: self.matrix!)
-    }
-    
+enum SupervisedLearning : String {
+    case none = ""
+    case randomForest = "Random Forest"
+    case kNearestNeighbors = "K Nearest Neighbors"
+    case supportVectorMachines = "Support Vector Machines"
+    case naïveBayes = "Naïve Bayes"
+    case gradientBoosting = "Gradient Boosting"
 }
 
+enum UnsupervisedLearning : String {
+    case none
+    case kMeans = "K Means"
+    case neuralNetworks = "Neural Networks"
+    case deepLearning = "Deep Learning"
+}

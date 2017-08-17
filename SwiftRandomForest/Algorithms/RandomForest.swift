@@ -23,37 +23,6 @@
 import UIKit
 import GameKit
 
-class TreeBuilder<T:Numeric>:Operation {
-    private var randomForest:RandomForest<T>
-    private var trainDataset:MatrixReference<T>
-    
-    init(randomForest:RandomForest<T>, trainDataset:MatrixReference<T>) {
-        self.randomForest = randomForest
-        self.trainDataset = trainDataset
-    }
-    
-    override func main() {
-        let sample = randomForest.subsample(dataset: trainDataset, sampleRatio: randomForest.sampleSize)
-        let splitSize = calculateSplitSize()
-        let tree = randomForest.buildTree(train:sample, maxDepth: randomForest.maxDepth, minSize: randomForest.minSize, featuresCount:splitSize)
-        randomForest.trees.append(tree)
-        print("Tree number \(randomForest.trees.count) build")
-    }
-    
-    private func calculateSplitSize() -> Int {
-        var splitSize:Int = 0
-        switch randomForest.splitType {
-        case .All:
-            splitSize = trainDataset.columns - 1
-        case .Sqrt:
-            splitSize = Int(sqrt(Double(trainDataset.columns - 1)))
-        case .Log2:
-            splitSize = Int(log2(Double(trainDataset.columns - 1)))
-        }
-        return splitSize
-    }
-}
-
 enum FeatureSplitType {
     case All
     case Sqrt
@@ -104,6 +73,16 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
             self.trees.clear()
             completion(predictions)
         }
+    }
+    
+    func trainClassifier(trainDataset: MatrixReference<T>, completion: @escaping () -> ()) {
+        randomForestTrain(trainDataset, completion: completion)
+    }
+    
+    func classify(testDataset: MatrixReference<T>) -> Array<NumericType> {
+        let predictions = self.randomForestTest(testDataset)
+        self.trees.clear()
+        return predictions
     }
     
     public func subsample(dataset:MatrixReference<T>, sampleRatio:Double) -> MatrixReference<T> {
@@ -344,3 +323,36 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
         return Group.init(left: left, right: right)
     }
 }
+
+
+class TreeBuilder<T:Numeric>:Operation {
+    private var randomForest:RandomForest<T>
+    private var trainDataset:MatrixReference<T>
+    
+    init(randomForest:RandomForest<T>, trainDataset:MatrixReference<T>) {
+        self.randomForest = randomForest
+        self.trainDataset = trainDataset
+    }
+    
+    override func main() {
+        let sample = randomForest.subsample(dataset: trainDataset, sampleRatio: randomForest.sampleSize)
+        let splitSize = calculateSplitSize()
+        let tree = randomForest.buildTree(train:sample, maxDepth: randomForest.maxDepth, minSize: randomForest.minSize, featuresCount:splitSize)
+        randomForest.trees.append(tree)
+        print("Tree number \(randomForest.trees.count) build")
+    }
+    
+    private func calculateSplitSize() -> Int {
+        var splitSize:Int = 0
+        switch randomForest.splitType {
+        case .All:
+            splitSize = trainDataset.columns - 1
+        case .Sqrt:
+            splitSize = Int(sqrt(Double(trainDataset.columns - 1)))
+        case .Log2:
+            splitSize = Int(log2(Double(trainDataset.columns - 1)))
+        }
+        return splitSize
+    }
+}
+

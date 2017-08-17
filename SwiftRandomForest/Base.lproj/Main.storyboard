@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="83y-pB-Bi1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="SNe-4N-POf">
+            <objects>
+                <navigationController id="83y-pB-Bi1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="96v-7U-xwq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WFk-3g-vOs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuf-a5-DEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-809" y="123"/>
+        </scene>
+        <!--Swift Classifiers-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HRChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SwiftRandomForest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,13 +37,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gaw-Ge-vdx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="lTP-gp-2eS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vTn-Df-bAA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gaw-Ge-vdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2CT-84-KbK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gaw-Ge-vdx" secondAttribute="bottom" id="T3I-66-tCE"/>
+                            <constraint firstItem="gaw-Ge-vdx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="t2l-D6-g9p"/>
+                            <constraint firstAttribute="trailing" secondItem="gaw-Ge-vdx" secondAttribute="trailing" id="tKD-DR-b5M"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Swift Classifiers" id="0AB-Os-UVv"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="gaw-Ge-vdx" id="EkL-7i-OWd"/>
+                        <segue destination="Hiq-WP-Ycw" kind="show" identifier="visualize" id="n2Q-WD-Tyr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="123"/>
+            <point key="canvasLocation" x="-30" y="123"/>
+        </scene>
+        <!--Visualize View Controller-->
+        <scene sceneID="v9G-Qp-TyR">
+            <objects>
+                <viewController id="Hiq-WP-Ycw" customClass="VisualizeViewController" customModule="SwiftRandomForest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Bf-gb-sop"/>
+                        <viewControllerLayoutGuide type="bottom" id="gPk-Ph-EPn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IUO-dO-ild">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-qA-Nrh">
+                                <rect key="frame" x="16" y="80" width="343" height="521"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwg-4P-x1d">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Sample Data"/>
+                                <connections>
+                                    <action selector="actionPressed:" destination="Hiq-WP-Ycw" eventType="touchUpInside" id="lo5-48-ooe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yrl-qA-Nrh" firstAttribute="trailing" secondItem="IUO-dO-ild" secondAttribute="trailingMargin" id="By4-4K-Hgu"/>
+                            <constraint firstItem="Fwg-4P-x1d" firstAttribute="leading" secondItem="IUO-dO-ild" secondAttribute="leading" constant="16" id="E4t-Kn-3AW"/>
+                            <constraint firstAttribute="trailing" secondItem="Fwg-4P-x1d" secondAttribute="trailing" constant="16" id="GhB-U8-HB1"/>
+                            <constraint firstItem="gPk-Ph-EPn" firstAttribute="top" secondItem="Fwg-4P-x1d" secondAttribute="bottom" constant="20" id="PnD-xR-Zz2"/>
+                            <constraint firstItem="Fwg-4P-x1d" firstAttribute="top" secondItem="yrl-qA-Nrh" secondAttribute="bottom" constant="16" id="eom-3X-ewv"/>
+                            <constraint firstItem="yrl-qA-Nrh" firstAttribute="top" secondItem="9Bf-gb-sop" secondAttribute="bottom" constant="16" id="jHg-Dm-4Mb"/>
+                            <constraint firstItem="yrl-qA-Nrh" firstAttribute="leading" secondItem="IUO-dO-ild" secondAttribute="leadingMargin" id="q2s-d9-nRe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="Fwg-4P-x1d" id="icR-0D-qIF"/>
+                        <outlet property="plotView" destination="yrl-qA-Nrh" id="woQ-3H-hdl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQn-OQ-yiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="123"/>
         </scene>
     </scenes>
 </document>
