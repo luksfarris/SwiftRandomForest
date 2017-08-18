@@ -24,23 +24,50 @@ import Foundation
 
 protocol Numeric:Hashable, Comparable {
     static func parse(text:String) -> Self
+    static func fromInt(int:Int) -> Self
+    func toDouble() -> Double
 }
 extension Float: Numeric {
     static func parse(text: String) -> Float {
         return Float(text) ?? 0.0
     }
+    static func fromInt(int: Int) -> Float {
+        return Float(int)
+    }
+    func toDouble() -> Double {
+        return Double(self)
+    }
 }
 extension Double: Numeric {
     static func parse(text: String) -> Double {
         return Double(text) ?? 0.0
-    }}
+    }
+    static func fromInt(int: Int) -> Double {
+        return Double(int)
+    }
+    func toDouble() -> Double {
+        return self
+    }
+}
 extension Int: Numeric {
     static func parse(text: String) -> Int {
         return Int(text) ?? 0
+    }
+    static func fromInt(int: Int) -> Int {
+        return int
+    }
+    func toDouble() -> Double {
+        return Double(self)
     }
 }
 extension UInt8: Numeric {
     static func parse(text: String) -> UInt8 {
         return UInt8(text) ?? 0
+    }
+    static func fromInt(int: Int) -> UInt8 {
+        return UInt8(int)
+    }
+    func toDouble() -> Double {
+        return Double(self)
     }
 }

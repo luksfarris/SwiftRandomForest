@@ -42,9 +42,11 @@ class VisualizeViewController : UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     
     public var supervised = true
-    private var currentStep:VizualizationStep = .sampleData
     
-    private let centroidsCount = 4
+    public var classifier:ClassifierAlgorithm<Int>!
+    public let centroidsCount = 4
+    
+    private var currentStep:VizualizationStep = .sampleData
     private let radius = 50
     private let samplesForCentroid = 100
     
@@ -53,13 +55,19 @@ class VisualizeViewController : UIViewController {
     private var trainData:MatrixReference<Int>?
     private var testData:MatrixReference<Int>?
     private var predictions:[Int]?
-    private var classifier:RandomForest<Int>!
+    
     var randomSource:GKARC4RandomSource!
     
     private let seed = "seed"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !supervised {
+            currentStep = .addRandomData
+            updateButton()
+        }
+        
         trainData = MatrixReference<Int>(matrix: Matrix(rows: centroidsCount*samplesForCentroid, columns: 3))
         randomSource = GKARC4RandomSource(seed: seed.data(using: .utf8)!)
     }
@@ -110,30 +118,38 @@ class VisualizeViewController : UIViewController {
     }
     
     private func addRandomData() {
-        testData = MatrixReference<Int>(matrix: Matrix(rows: testSize, columns: 3))
-        
-        let randomDistributionX = GKRandomDistribution(randomSource: randomSource, lowestValue: radius, highestValue: Int(plotView.frame.width) - radius)
-        let randomDistributionY = GKRandomDistribution(randomSource: randomSource, lowestValue: radius, highestValue: Int(plotView.frame.height) - radius)
-        // sample random points in the plot
-        for i in 0..<testSize {
-            testData?.matrix.append(randomDistributionX.nextInt())
-            testData?.matrix.append(randomDistributionY.nextInt())
-            testData?.matrix.append(-1)
-            testData?.append(index: i)
+        if supervised {
+            testData = MatrixReference<Int>(matrix: Matrix(rows: testSize, columns: 3))
+            let randomDistributionX = GKRandomDistribution(randomSource: randomSource, lowestValue: radius, highestValue: Int(plotView.frame.width) - radius)
+            let randomDistributionY = GKRandomDistribution(randomSource: randomSource, lowestValue: radius, highestValue: Int(plotView.frame.height) - radius)
+            // sample random points in the plot
+            for i in 0..<testSize {
+                testData?.matrix.append(randomDistributionX.nextInt())
+                testData?.matrix.append(randomDistributionY.nextInt())
+                testData?.matrix.append(-1)
+                testData?.append(index: i)
+            }
+            plot()
+        } else {
+            sampleData()
         }
-        plot()
     }
     
     private func runClassifier() {
-        if let dataset = testData {
-            predictions = classifier.classify(testDataset: dataset)
-            plot()
+        if supervised {
+            if let dataset = testData {
+                predictions = classifier.classify(testDataset: dataset)
+                plot()
+            }
+        } else {
+            if let dataset = trainData {
+                predictions = classifier.classify(testDataset: dataset)
+                plot()
+            }
         }
     }
     
     private func trainClassifier() {
-        
-        classifier = RandomForest<Int>.init(outputClasses: Array(0..<centroidsCount))
         
         if let dataset = trainData {
             classifier.trainClassifier(trainDataset: dataset, completion: {
@@ -174,7 +190,13 @@ class VisualizeViewController : UIViewController {
         if let dataset = trainData {
             for row in dataset.rows {
                 let pointView = UIView(frame: CGRect(x: dataset.elementAt(row, 0), y: dataset.elementAt(row, 1), width: 5, height: 5))
-                pointView.backgroundColor = UIColor.random(seed + "\(dataset.elementAt(row, 2))")
+                if supervised {
+                    pointView.backgroundColor = UIColor.random(seed + "\(dataset.elementAt(row, 2))")
+                } else if let outputs = predictions {
+                    pointView.backgroundColor = UIColor.random(seed + "\(outputs[row])")
+                } else {
+                    pointView.backgroundColor = UIColor.black
+                }
                 pointView.layer.cornerRadius = 2.5
                 plotView.addSubview(pointView)
             }

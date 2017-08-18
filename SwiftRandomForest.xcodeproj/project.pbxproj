@@ -35,6 +35,8 @@
 		A6A5C3D31F4480A900549415 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3D11F4480A900549415 /* ThreadSafeArray.swift */; };
 		A6A5C3D51F4480D600549415 /* database.csv in Resources */ = {isa = PBXBuildFile; fileRef = A6A5C3D41F4480D600549415 /* database.csv */; };
 		A6A5C3DB1F44931F00549415 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3DA1F44931F00549415 /* RandomColor.swift */; };
+		A6CCA2731F45D8DE00106087 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCA2721F45D8DE00106087 /* KMeans.swift */; };
+		A6CCA2751F45E51E00106087 /* GeometricArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCA2741F45E51E00106087 /* GeometricArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		A6A5C3D11F4480A900549415 /* ThreadSafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreadSafeArray.swift; path = Concurrency/ThreadSafeArray.swift; sourceTree = "<group>"; };
 		A6A5C3D41F4480D600549415 /* database.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = database.csv; sourceTree = "<group>"; };
 		A6A5C3DA1F44931F00549415 /* RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
+		A6CCA2721F45D8DE00106087 /* KMeans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMeans.swift; sourceTree = "<group>"; };
+		A6CCA2741F45E51E00106087 /* GeometricArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometricArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 				A6A5C3C71F44802300549415 /* MatrixReference.swift */,
 				A6A5C3C81F44802300549415 /* Numerics.swift */,
 				A6A5C3C91F44802300549415 /* TreeNode.swift */,
+				A6CCA2741F45E51E00106087 /* GeometricArray.swift */,
 			);
 			name = "Data Structures";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				A6A5C3C11F447FB100549415 /* RandomForest.swift */,
 				A6A5C3BC1F447D2500549415 /* ClassifierAlgorithm.swift */,
 				A6A5C3BE1F447DE900549415 /* Metrics.swift */,
+				A6CCA2721F45D8DE00106087 /* KMeans.swift */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
@@ -390,8 +396,10 @@
 				A6A5C3B81F4472BE00549415 /* MainViewController.swift in Sources */,
 				A6A5C3C51F447FF400549415 /* Algorithms.swift in Sources */,
 				A6A5C3BF1F447DE900549415 /* Metrics.swift in Sources */,
+				A6CCA2751F45E51E00106087 /* GeometricArray.swift in Sources */,
 				A6A5C3CC1F44802300549415 /* Numerics.swift in Sources */,
 				A6A5C3DB1F44931F00549415 /* RandomColor.swift in Sources */,
+				A6CCA2731F45D8DE00106087 /* KMeans.swift in Sources */,
 				A6A5C3D21F4480A900549415 /* OperationQueueManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

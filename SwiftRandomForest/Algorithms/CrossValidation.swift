@@ -22,15 +22,15 @@
 
 import UIKit
 
-class CrossValidation<T:Numeric, U:ClassifierAlgorithm>: NSObject where U.NumericType == T {
+class CrossValidation<T:Numeric>: NSObject {
     
     typealias NumericType = T
     
     private var folds:Int
-    private var algorithm:U
+    private var algorithm:ClassifierAlgorithm<T>
     private var trainSet:MatrixReference<T>?
     
-    init(algorithm:U, folds:Int) {
+    init(algorithm:ClassifierAlgorithm<T>, folds:Int) {
         self.folds = folds
         self.algorithm = algorithm
     }

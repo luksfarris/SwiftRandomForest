@@ -29,10 +29,8 @@ enum FeatureSplitType {
     case Log2
 }
 
-class RandomForest<T:Numeric>: ClassifierAlgorithm {
-    
-    typealias NumericType = T
-
+class RandomForest<T:Numeric>: ClassifierAlgorithm<T> {
+ 
     public private(set) var maxDepth:Int
     public private(set) var minSize:Int
     public private(set) var sampleSize:Double
@@ -67,7 +65,7 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
     }
     
     
-    func runClassifier(trainDataset:MatrixReference<T>, testDataset:MatrixReference<T>, completion: @escaping (Array<NumericType>)->()) {
+    override func runClassifier(trainDataset:MatrixReference<T>, testDataset:MatrixReference<T>, completion: @escaping (Array<NumericType>)->()) {
         randomForestTrain(trainDataset) {
             let predictions = self.randomForestTest(testDataset)
             self.trees.clear()
@@ -75,11 +73,11 @@ class RandomForest<T:Numeric>: ClassifierAlgorithm {
         }
     }
     
-    func trainClassifier(trainDataset: MatrixReference<T>, completion: @escaping () -> ()) {
+    override func trainClassifier(trainDataset: MatrixReference<T>, completion: @escaping () -> ()) {
         randomForestTrain(trainDataset, completion: completion)
     }
     
-    func classify(testDataset: MatrixReference<T>) -> Array<NumericType> {
+    override func classify(testDataset: MatrixReference<T>) -> Array<NumericType> {
         let predictions = self.randomForestTest(testDataset)
         self.trees.clear()
         return predictions

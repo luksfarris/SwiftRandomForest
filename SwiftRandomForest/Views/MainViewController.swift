@@ -26,31 +26,29 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
-    fileprivate var implementedAlgorithms:[String] = [SupervisedLearning.randomForest.rawValue]
+    fileprivate var implementedAlgorithms:[String] = [SupervisedLearning.randomForest.rawValue, UnsupervisedLearning.kMeans.rawValue]
     fileprivate var supervisedAlgorithms:[SupervisedLearning] = [.randomForest, .kNearestNeighbors, .gradientBoosting, .naïveBayes, .supportVectorMachines]
     fileprivate var unsupervisedAlgorithms:[UnsupervisedLearning] = [.kMeans, .neuralNetworks, .deepLearning]
     
-    
-//    var matrix:Matrix<Double>?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.tableFooterView = UIView()
-        
-//        let rd = CSVReader<Double>.init(encoding: .utf8, hasHeader: true)
-//        self.matrix = rd.parseFileWith(name:"database")
-//        
-//        let rf = RandomForest<Double>.init(maxDepth:30, minSize:10, sampleSize:0.5, balancedTrees:true, weighs:[1,1], outputClasses: self.matrix!.outputClasses!)
-//        
-//        let cv = CrossValidation<Double,RandomForest<Double>>.init(algorithm: rf, folds: 5)
-//        cv.evaluateAlgorithm(dataset: self.matrix!)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let destination = segue.destination as! VisualizeViewController
+        if let algorithm = sender as? SupervisedLearning {
+            if (algorithm == SupervisedLearning.randomForest) {
+                destination.classifier = RandomForest<Int>.init(seed:"Seed", outputClasses: Array(0..<destination.centroidsCount))
+                destination.supervised = true
+            }
+        } else if let algorithm = sender as? UnsupervisedLearning {
+            if (algorithm == UnsupervisedLearning.kMeans) {
+                destination.classifier = KMeans.init(seed: "Seed")
+                destination.supervised = false
+            }
+        }
     }
 }
 
