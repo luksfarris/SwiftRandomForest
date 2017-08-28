@@ -22,30 +22,9 @@
 
 import XCTest
 
-class MatrixTest: XCTestCase {
-    
-    override func setUp() {super.setUp()}
-    override func tearDown() {super.tearDown()}
-    
-    public static func createDemoMatrix() -> Matrix<Int> {
-        let mat = Matrix<Int>.init(rows: 3, columns: 2)
-        mat[0,0]=1
-        mat[0,1]=1
-        mat[1,0]=2
-        mat[1,1]=2
-        mat[2,0]=3
-        mat[2,1]=3
-        return mat
-    }
-    
-    func test() {
-        let mat = MatrixTest.createDemoMatrix()
-        assert(mat[0,0]==1)
-        assert(mat[2,1]==3)
-        assert(mat.rowAtIndex(1)[0]==2)
-        assert(mat.rowAtIndex(2)[1]==3)
-        
-        assert([0,0,0].freq(value:0)==3)
-        
+class ArrayMatrixTest: PointerMatrixTest {
+
+    override func createDemoMatrix() -> GenericMatrix<UInt8> {
+        return ArrayMatrix<UInt8>.createDemoMatrix()
     }
 }

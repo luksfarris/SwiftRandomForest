@@ -11,10 +11,29 @@
 		A608CB911E7C4AEB00FBE1FE /* CSVReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB901E7C4AEB00FBE1FE /* CSVReaderTest.swift */; };
 		A608CB941E7C4C1400FBE1FE /* mock.csv in Resources */ = {isa = PBXBuildFile; fileRef = A608CB931E7C4C1400FBE1FE /* mock.csv */; };
 		A608CB961E7C4EDE00FBE1FE /* mock.csv in Resources */ = {isa = PBXBuildFile; fileRef = A608CB931E7C4C1400FBE1FE /* mock.csv */; };
-		A608CB991E7C4F7800FBE1FE /* MatrixTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB981E7C4F7800FBE1FE /* MatrixTest.swift */; };
-		A608CB9B1E7C528800FBE1FE /* MatrixReferenceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB9A1E7C528800FBE1FE /* MatrixReferenceTest.swift */; };
+		A608CB991E7C4F7800FBE1FE /* PointerMatrixTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB981E7C4F7800FBE1FE /* PointerMatrixTest.swift */; };
 		A608CB9E1E7C59B000FBE1FE /* RandomForestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608CB9D1E7C59B000FBE1FE /* RandomForestTest.swift */; };
 		A64A703A1EE1A9C200169A73 /* RandomForestPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A70391EE1A9C200169A73 /* RandomForestPerformanceTest.swift */; };
+		A64FFF851F5EA47900CBCBEF /* MatrixProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64FFF841F5EA47900CBCBEF /* MatrixProtocol.swift */; };
+		A654DB801F4B1C2E0055B430 /* PointerMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A654DB7F1F4B1C2E0055B430 /* PointerMatrix.swift */; };
+		A654DB831F4B1F970055B430 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3D11F4480A900549415 /* ThreadSafeArray.swift */; };
+		A654DB841F4B1F990055B430 /* OperationQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3D01F4480A900549415 /* OperationQueueManager.swift */; };
+		A654DB851F4B1FA20055B430 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3DA1F44931F00549415 /* RandomColor.swift */; };
+		A654DB861F4B1FA50055B430 /* VisualizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3B51F4472A400549415 /* VisualizeViewController.swift */; };
+		A654DB871F4B1FA80055B430 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3B71F4472BE00549415 /* MainViewController.swift */; };
+		A654DB881F4B1FB00055B430 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3CE1F44804200549415 /* CSVReader.swift */; };
+		A654DB891F4B1FB60055B430 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C41F447FF400549415 /* Algorithms.swift */; };
+		A654DB8A1F4B1FB90055B430 /* CrossValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C01F447FB100549415 /* CrossValidation.swift */; };
+		A654DB8B1F4B1FB90055B430 /* RandomForest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C11F447FB100549415 /* RandomForest.swift */; };
+		A654DB8C1F4B1FB90055B430 /* ClassifierAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3BC1F447D2500549415 /* ClassifierAlgorithm.swift */; };
+		A654DB8D1F4B1FB90055B430 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3BE1F447DE900549415 /* Metrics.swift */; };
+		A654DB8E1F4B1FB90055B430 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCA2721F45D8DE00106087 /* KMeans.swift */; };
+		A654DB931F4B1FBD0055B430 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C61F44802300549415 /* Matrix.swift */; };
+		A654DB941F4B1FBD0055B430 /* MatrixReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C71F44802300549415 /* MatrixReference.swift */; };
+		A654DB951F4B1FBD0055B430 /* PointerMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A654DB7F1F4B1C2E0055B430 /* PointerMatrix.swift */; };
+		A654DB961F4B1FBD0055B430 /* Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C81F44802300549415 /* Numerics.swift */; };
+		A654DB971F4B1FBD0055B430 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3C91F44802300549415 /* TreeNode.swift */; };
+		A654DB981F4B1FBD0055B430 /* GeometricArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCA2741F45E51E00106087 /* GeometricArray.swift */; };
 		A67D3C291E6DA988007B2E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D3C281E6DA988007B2E65 /* AppDelegate.swift */; };
 		A67D3C2E1E6DA988007B2E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67D3C2C1E6DA988007B2E65 /* Main.storyboard */; };
 		A67D3C301E6DA988007B2E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67D3C2F1E6DA988007B2E65 /* Assets.xcassets */; };
@@ -37,6 +56,10 @@
 		A6A5C3DB1F44931F00549415 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5C3DA1F44931F00549415 /* RandomColor.swift */; };
 		A6CCA2731F45D8DE00106087 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCA2721F45D8DE00106087 /* KMeans.swift */; };
 		A6CCA2751F45E51E00106087 /* GeometricArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CCA2741F45E51E00106087 /* GeometricArray.swift */; };
+		A6D629401F605E2F0005F9C8 /* ArrayMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D6293F1F605E2F0005F9C8 /* ArrayMatrix.swift */; };
+		A6D629411F6061DE0005F9C8 /* MatrixProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64FFF841F5EA47900CBCBEF /* MatrixProtocol.swift */; };
+		A6D629421F6061E10005F9C8 /* ArrayMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D6293F1F605E2F0005F9C8 /* ArrayMatrix.swift */; };
+		A6D629441F60722A0005F9C8 /* ArrayMatrixTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D629431F60722A0005F9C8 /* ArrayMatrixTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +78,11 @@
 		A608CB811E7C48FE00FBE1FE /* ThreadSafeArrayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafeArrayTest.swift; sourceTree = "<group>"; };
 		A608CB901E7C4AEB00FBE1FE /* CSVReaderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReaderTest.swift; sourceTree = "<group>"; };
 		A608CB931E7C4C1400FBE1FE /* mock.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mock.csv; sourceTree = "<group>"; };
-		A608CB981E7C4F7800FBE1FE /* MatrixTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixTest.swift; sourceTree = "<group>"; };
-		A608CB9A1E7C528800FBE1FE /* MatrixReferenceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixReferenceTest.swift; sourceTree = "<group>"; };
+		A608CB981E7C4F7800FBE1FE /* PointerMatrixTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerMatrixTest.swift; sourceTree = "<group>"; };
 		A608CB9D1E7C59B000FBE1FE /* RandomForestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomForestTest.swift; sourceTree = "<group>"; };
 		A64A70391EE1A9C200169A73 /* RandomForestPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomForestPerformanceTest.swift; sourceTree = "<group>"; };
+		A64FFF841F5EA47900CBCBEF /* MatrixProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixProtocol.swift; path = DataStructures/MatrixProtocol.swift; sourceTree = "<group>"; };
+		A654DB7F1F4B1C2E0055B430 /* PointerMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerMatrix.swift; sourceTree = "<group>"; };
 		A67D3C251E6DA988007B2E65 /* SwiftRandomForest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRandomForest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67D3C281E6DA988007B2E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67D3C2D1E6DA988007B2E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +107,8 @@
 		A6A5C3DA1F44931F00549415 /* RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 		A6CCA2721F45D8DE00106087 /* KMeans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMeans.swift; sourceTree = "<group>"; };
 		A6CCA2741F45E51E00106087 /* GeometricArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometricArray.swift; sourceTree = "<group>"; };
+		A6D6293F1F605E2F0005F9C8 /* ArrayMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayMatrix.swift; path = DataStructures/ArrayMatrix.swift; sourceTree = "<group>"; };
+		A6D629431F60722A0005F9C8 /* ArrayMatrixTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayMatrixTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +178,8 @@
 		A608CB971E7C4F4D00FBE1FE /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
-				A608CB981E7C4F7800FBE1FE /* MatrixTest.swift */,
-				A608CB9A1E7C528800FBE1FE /* MatrixReferenceTest.swift */,
+				A608CB981E7C4F7800FBE1FE /* PointerMatrixTest.swift */,
+				A6D629431F60722A0005F9C8 /* ArrayMatrixTest.swift */,
 			);
 			name = "Data Structures";
 			sourceTree = "<group>";
@@ -202,6 +228,9 @@
 		A67D3C501E707BEF007B2E65 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				A64FFF841F5EA47900CBCBEF /* MatrixProtocol.swift */,
+				A654DB7F1F4B1C2E0055B430 /* PointerMatrix.swift */,
+				A6D6293F1F605E2F0005F9C8 /* ArrayMatrix.swift */,
 				A6A5C3C61F44802300549415 /* Matrix.swift */,
 				A6A5C3C71F44802300549415 /* MatrixReference.swift */,
 				A6A5C3C81F44802300549415 /* Numerics.swift */,
@@ -370,12 +399,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A654DB8B1F4B1FB90055B430 /* RandomForest.swift in Sources */,
+				A6D629421F6061E10005F9C8 /* ArrayMatrix.swift in Sources */,
 				A608CB821E7C48FE00FBE1FE /* ThreadSafeArrayTest.swift in Sources */,
+				A654DB871F4B1FA80055B430 /* MainViewController.swift in Sources */,
+				A654DB961F4B1FBD0055B430 /* Numerics.swift in Sources */,
+				A654DB8D1F4B1FB90055B430 /* Metrics.swift in Sources */,
+				A654DB951F4B1FBD0055B430 /* PointerMatrix.swift in Sources */,
+				A6D629411F6061DE0005F9C8 /* MatrixProtocol.swift in Sources */,
 				A608CB911E7C4AEB00FBE1FE /* CSVReaderTest.swift in Sources */,
+				A654DB8C1F4B1FB90055B430 /* ClassifierAlgorithm.swift in Sources */,
+				A654DB971F4B1FBD0055B430 /* TreeNode.swift in Sources */,
 				A608CB9E1E7C59B000FBE1FE /* RandomForestTest.swift in Sources */,
 				A64A703A1EE1A9C200169A73 /* RandomForestPerformanceTest.swift in Sources */,
-				A608CB9B1E7C528800FBE1FE /* MatrixReferenceTest.swift in Sources */,
-				A608CB991E7C4F7800FBE1FE /* MatrixTest.swift in Sources */,
+				A654DB8A1F4B1FB90055B430 /* CrossValidation.swift in Sources */,
+				A654DB831F4B1F970055B430 /* ThreadSafeArray.swift in Sources */,
+				A654DB981F4B1FBD0055B430 /* GeometricArray.swift in Sources */,
+				A654DB851F4B1FA20055B430 /* RandomColor.swift in Sources */,
+				A654DB891F4B1FB60055B430 /* Algorithms.swift in Sources */,
+				A654DB8E1F4B1FB90055B430 /* KMeans.swift in Sources */,
+				A654DB931F4B1FBD0055B430 /* Matrix.swift in Sources */,
+				A608CB991E7C4F7800FBE1FE /* PointerMatrixTest.swift in Sources */,
+				A654DB941F4B1FBD0055B430 /* MatrixReference.swift in Sources */,
+				A654DB841F4B1F990055B430 /* OperationQueueManager.swift in Sources */,
+				A6D629441F60722A0005F9C8 /* ArrayMatrixTest.swift in Sources */,
+				A654DB861F4B1FA50055B430 /* VisualizeViewController.swift in Sources */,
+				A654DB881F4B1FB00055B430 /* CSVReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A654DB801F4B1C2E0055B430 /* PointerMatrix.swift in Sources */,
 				A6A5C3CA1F44802300549415 /* Matrix.swift in Sources */,
 				A6A5C3C31F447FB100549415 /* RandomForest.swift in Sources */,
 				A6A5C3CD1F44802300549415 /* TreeNode.swift in Sources */,
@@ -396,6 +446,8 @@
 				A6A5C3B81F4472BE00549415 /* MainViewController.swift in Sources */,
 				A6A5C3C51F447FF400549415 /* Algorithms.swift in Sources */,
 				A6A5C3BF1F447DE900549415 /* Metrics.swift in Sources */,
+				A6D629401F605E2F0005F9C8 /* ArrayMatrix.swift in Sources */,
+				A64FFF851F5EA47900CBCBEF /* MatrixProtocol.swift in Sources */,
 				A6CCA2751F45E51E00106087 /* GeometricArray.swift in Sources */,
 				A6A5C3CC1F44802300549415 /* Numerics.swift in Sources */,
 				A6A5C3DB1F44931F00549415 /* RandomColor.swift in Sources */,
